@@ -11,9 +11,9 @@ let choices = [
 
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Please type either Rock, Paper, or Scissors. Click the 'Cancel' button below or type 'cancel' to quit out of this prompt.")
+    playerSelection = prompt("Please type either Rock, Paper, or Scissors. Click the 'Cancel' button below or type 'cancel' to quit out of this prompt.").toLowerCase();
     computerSelection = choices[Math.floor(Math.random() * choices.length)];
-    console.log(computerSelection);
+    console.log(`The computer picked ${computerSelection}. You picked ${playerSelection}.`);
 
 
     if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -51,11 +51,10 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "scissors" && computerSelection == "scissors") {
         console.log("Both Chose Paper! Tie Game")
     }
-    
+
     else {
         console.log("Unexpected Error")
     }
-
     
 
     
@@ -69,9 +68,6 @@ function game() {
     
     for (let i = 0; i < 5; i++) {
         playRound()
-        if (playerSelection = "cancel") {
-            return
-        }
     };
 }
 
