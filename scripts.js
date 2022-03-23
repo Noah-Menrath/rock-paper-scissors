@@ -16,10 +16,13 @@ let linkComputerSelection = document.querySelector('#htmlComputerSelection');
 
 let linkPlayerScore = document.querySelector('#playerScore');
 let linkComputerScore = document.querySelector('#computerScore');
-actualPlayerScore = 0;
-actualComputerScore = 0;
+actualPlayerScore = 1;
+actualComputerScore = 1;
 
 let linkWinnerResults = document.querySelector('#winnerResults');
+
+
+let linkBtnReset = document.querySelector('#btnReset');
 
 
 
@@ -37,13 +40,13 @@ function rockChoice() {
         linkPlayerSelection.textContent = "You Chose Rock!";
         linkComputerSelection.textContent="The Computer Chose Scissors!"
         linkPlayerScore.textContent=(`Player: ${actualPlayerScore++} `);
-        if (actualPlayerScore == 5) {
-            linkWinnerResults.textContent("Player Wins!");
+        if (actualPlayerScore == 6) {
+            linkWinnerResults.textContent=("Player Wins!");
         }
-        else if (actualComputerScore == 5) {
-            linkWinnerResults.textContent("Computer Wins!");
+        else if (actualComputerScore == 6) {
+            linkWinnerResults.textContent=("Computer Wins!");
         } else {
-            console.log("next");
+            console.log("unexpected?");
         }
         
     }
@@ -52,13 +55,13 @@ function rockChoice() {
         linkPlayerSelection.textContent = "You Chose Rock!";
         linkComputerSelection.textContent="The Computer Chose Paper!"
         linkComputerScore.textContent=(` Computer: ${actualComputerScore++}`);
-        if (actualPlayerScore == 5) {
-            linkWinnerResults.textContent("Player Wins!");
+        if (actualPlayerScore == 6) {
+            linkWinnerResults.textContent=("Player Wins!");
         }
-        else if (actualComputerScore == 5) {
-            linkWinnerResults.textContent("Computer Wins!");
+        else if (actualComputerScore == 6) {
+            linkWinnerResults.textContent=("Computer Wins!");
         } else {
-            console.log("next");
+            console.log("unexpected?");
         }
         
     }
@@ -88,13 +91,13 @@ function paperChoice() {
         linkPlayerSelection.textContent = "You Chose Paper!";
         linkComputerSelection.textContent="The Computer Chose Scissors!"
         linkComputerScore.textContent=(` Computer: ${actualComputerScore++} `);
-        if (actualPlayerScore == 5) {
-            linkWinnerResults.textContent("Player Wins!");
+        if (actualPlayerScore == 6) {
+            linkWinnerResults.textContent=("Player Wins!");
         }
-        else if (actualComputerScore == 5) {
-            linkWinnerResults.textContent("Computer Wins!");
+        else if (actualComputerScore == 6) {
+            linkWinnerResults.textContent=("Computer Wins!");
         } else {
-            console.log("next");
+            console.log("unexpected?");
         }
         
     }
@@ -104,13 +107,13 @@ function paperChoice() {
         linkPlayerSelection.textContent = "You Chose Paper!";
         linkComputerSelection.textContent="The Computer Chose Rock!"
         linkPlayerScore.textContent=(`Player: ${actualPlayerScore++} `);
-        if (actualPlayerScore == 5) {
-            linkWinnerResults.textContent("Player Wins!");
+        if (actualPlayerScore == 6) {
+            linkWinnerResults.textContent=("Player Wins!");
         }
-        else if (actualComputerScore == 5) {
-            linkWinnerResults.textContent("Computer Wins!");
+        else if (actualComputerScore == 6) {
+            linkWinnerResults.textContent=("Computer Wins!");
         } else {
-            console.log("next");
+            console.log("unexpected?");
         }
         
     }
@@ -141,13 +144,13 @@ function scissorsChoice() {
         linkPlayerSelection.textContent = "You Chose Scissors!";
         linkComputerSelection.textContent="The Computer Chose Rock!";
         linkComputerScore.textContent=(` Computer: ${actualComputerScore++} `);
-        if (actualPlayerScore == 5) {
-            linkWinnerResults.textContent("Player Wins!");
+        if (actualPlayerScore == 6) {
+            linkWinnerResults.textContent=("Player Wins!");
         }
-        else if (actualComputerScore == 5) {
-            linkWinnerResults.textContent("Computer Wins!");
+        else if (actualComputerScore == 6) {
+            linkWinnerResults.textContent=("Computer Wins!");
         } else {
-            console.log("next");
+            console.log("unexpected?");
         }
         
     }
@@ -157,13 +160,13 @@ function scissorsChoice() {
         linkPlayerSelection.textContent = "You Chose Scissors!";
         linkComputerSelection.textContent="The Computer Chose Paper!"
         linkPlayerScore.textContent=(`Player: ${actualPlayerScore++} `);
-        if (actualPlayerScore == 5) {
-            linkWinnerResults.textContent("Player Wins!");
+        if (actualPlayerScore == 6) {
+            linkWinnerResults.textContent=("Player Wins!");
         }
-        else if (actualComputerScore == 5) {
-            linkWinnerResults.textContent("Computer Wins!");
+        else if (actualComputerScore == 6) {
+            linkWinnerResults.textContent=("Computer Wins!");
         } else {
-            console.log("next");
+            console.log("unexpected?");
         }
         
     }
@@ -177,13 +180,16 @@ function scissorsChoice() {
     else {
         console.log("Unexpected Error");
     }
-
-
 };
 
+
+function reloadPage() {
+    document.location.reload()
+};
 
 
 
 rock.addEventListener("click", rockChoice);
 paper.addEventListener("click", paperChoice);
 scissors.addEventListener("click", scissorsChoice);
+linkBtnReset.addEventListener("click", reloadPage);

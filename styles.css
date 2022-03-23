@@ -10,6 +10,7 @@ body {
     font-size: 50px;
     border-radius: 10px;
     width: 350px;
+    border: 1px solid;
     
 }
 
@@ -17,8 +18,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: end;
-    border: 1px solid red;
-    margin-top: 325px;
+
+    margin-top: 8em;
     gap: 75px;
 }
 
@@ -50,16 +51,16 @@ body {
 
 #infoTab {
     background-color: rgb(73, 14, 211);
-    margin-top: 10em;
+    margin-top: 5em;
     display: flex;
     flex-direction: column;
-    border: 1px solid yellow;
     justify-content: center;
     align-items: center;
     margin-left:45em;
     margin-right: 42em;
     gap: 25px;
     padding: 25px;
+    border: 1px solid white;
 }
 
 #htmlPlayerSelection,
