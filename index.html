@@ -7,11 +7,15 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="infoTab"></div>
-            <div id="htmlPlayerSelection">You Picked: ${linkPlayerSelection}</div>
-            <div id="htmlComputerSelection">The Computer Picked: ${computerSelection}</div>
-            <div id="score">Player: ${playerScore} Computer: ${computerScore}</div>
-            <div id="winnerResults">${...} Won! The final score was ${playerScore} to ${computerScore}</div>
+        <div id="infoTab">
+            <div id="htmlPlayerSelection">Player</div>
+            <div id="htmlComputerSelection">Computer</div>
+            <div id="score">
+                <div id="playerScore">Player Score</div>
+                <div id="computerScore">Computer Score</div>
+            </div>
+            <div id="winnerResults">Winner/Final Score</div>
+        </div>
         <div id="buttonOverview">
             <button id="btn1">Rock</button>
             <button id="btn2">Paper</button>

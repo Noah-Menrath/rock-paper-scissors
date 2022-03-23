@@ -14,6 +14,13 @@ const scissors = document.querySelector('#btn3');
 let linkPlayerSelection = document.querySelector('#htmlPlayerSelection');
 let linkComputerSelection = document.querySelector('#htmlComputerSelection');
 
+let linkPlayerScore = document.querySelector('#playerScore');
+let linkComputerScore = document.querySelector('#computerScore');
+actualPlayerScore = 0;
+actualComputerScore = 0;
+
+let linkWinnerResults = document.querySelector('#winnerResults');
+
 
 
 /* if player chose rock */
@@ -29,13 +36,37 @@ function rockChoice() {
         console.log("Rock wins! Congratulations!");
         linkPlayerSelection.textContent = "You Chose Rock!";
         linkComputerSelection.textContent="The Computer Chose Scissors!"
+        linkPlayerScore.textContent=(`Player: ${actualPlayerScore++} `);
+        if (actualPlayerScore == 5) {
+            linkWinnerResults.textContent("Player Wins!");
+        }
+        else if (actualComputerScore == 5) {
+            linkWinnerResults.textContent("Computer Wins!");
+        } else {
+            console.log("next");
+        }
+        
     }
     else if (computerSelection == "paper") {
         console.log("Paper wins! You Lose!");
+        linkPlayerSelection.textContent = "You Chose Rock!";
+        linkComputerSelection.textContent="The Computer Chose Paper!"
+        linkComputerScore.textContent=(` Computer: ${actualComputerScore++}`);
+        if (actualPlayerScore == 5) {
+            linkWinnerResults.textContent("Player Wins!");
+        }
+        else if (actualComputerScore == 5) {
+            linkWinnerResults.textContent("Computer Wins!");
+        } else {
+            console.log("next");
+        }
+        
     }
 
     else if (computerSelection == "rock") {
         console.log("Both Chose Rock! Tie Game!");
+        linkPlayerSelection.textContent = "You Chose Rock!";
+        linkComputerSelection.textContent="The Computer Chose Rock!"
     }
 
     else {
@@ -54,14 +85,40 @@ function paperChoice() {
 
     if (computerSelection == "scissors") {
         console.log("Scissors Beat Paper! You Lose!");
+        linkPlayerSelection.textContent = "You Chose Paper!";
+        linkComputerSelection.textContent="The Computer Chose Scissors!"
+        linkComputerScore.textContent=(` Computer: ${actualComputerScore++} `);
+        if (actualPlayerScore == 5) {
+            linkWinnerResults.textContent("Player Wins!");
+        }
+        else if (actualComputerScore == 5) {
+            linkWinnerResults.textContent("Computer Wins!");
+        } else {
+            console.log("next");
+        }
+        
     }
 
     else if (computerSelection == "rock") {
         console.log("Paper Beats Rock! Congratulations!");
+        linkPlayerSelection.textContent = "You Chose Paper!";
+        linkComputerSelection.textContent="The Computer Chose Rock!"
+        linkPlayerScore.textContent=(`Player: ${actualPlayerScore++} `);
+        if (actualPlayerScore == 5) {
+            linkWinnerResults.textContent("Player Wins!");
+        }
+        else if (actualComputerScore == 5) {
+            linkWinnerResults.textContent("Computer Wins!");
+        } else {
+            console.log("next");
+        }
+        
     }
 
     else if (computerSelection == "paper") {
         console.log("Both Chose Paper! Tie Game!");
+        linkPlayerSelection.textContent = "You Chose Paper!";
+        linkComputerSelection.textContent="The Computer Chose Paper!"
     }
 
     else {
@@ -81,14 +138,40 @@ function scissorsChoice() {
 
     if (computerSelection == "rock") {
         console.log("Rock Beats Scissors! You Lose!");
+        linkPlayerSelection.textContent = "You Chose Scissors!";
+        linkComputerSelection.textContent="The Computer Chose Rock!";
+        linkComputerScore.textContent=(` Computer: ${actualComputerScore++} `);
+        if (actualPlayerScore == 5) {
+            linkWinnerResults.textContent("Player Wins!");
+        }
+        else if (actualComputerScore == 5) {
+            linkWinnerResults.textContent("Computer Wins!");
+        } else {
+            console.log("next");
+        }
+        
     }
 
     else if (computerSelection == "paper") {
         console.log("Scissors Beat Paper! Congratulations!");
+        linkPlayerSelection.textContent = "You Chose Scissors!";
+        linkComputerSelection.textContent="The Computer Chose Paper!"
+        linkPlayerScore.textContent=(`Player: ${actualPlayerScore++} `);
+        if (actualPlayerScore == 5) {
+            linkWinnerResults.textContent("Player Wins!");
+        }
+        else if (actualComputerScore == 5) {
+            linkWinnerResults.textContent("Computer Wins!");
+        } else {
+            console.log("next");
+        }
+        
     }
 
     else if (computerSelection == "scissors") {
         console.log("Both Chose Paper! Tie Game!");
+        linkPlayerSelection.textContent = "You Chose Scissors!";
+        linkComputerSelection.textContent="The Computer Chose Scissors!"
     }
 
     else {
