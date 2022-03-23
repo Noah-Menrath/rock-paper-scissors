@@ -7,12 +7,18 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <button id="btn0">START</button>
-        <button id="btn1" onclick="playRound()">Rock</button>
-        <button id="btn2">Paper</button>
-        <button id="btn3">Scissors</button>
         <div id="infoTab"></div>
-    
+            <div id="htmlPlayerSelection">You Picked: ${linkPlayerSelection}</div>
+            <div id="htmlComputerSelection">The Computer Picked: ${computerSelection}</div>
+            <div id="score">Player: ${playerScore} Computer: ${computerScore}</div>
+            <div id="winnerResults">${...} Won! The final score was ${playerScore} to ${computerScore}</div>
+        <div id="buttonOverview">
+            <button id="btn1">Rock</button>
+            <button id="btn2">Paper</button>
+            <button id="btn3">Scissors</button>
+        </div>
+        
+            
     </body>
 
 </html>
