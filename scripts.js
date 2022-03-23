@@ -6,55 +6,68 @@ let choices = [
 
 
 
+/* linking buttons from html to JS */
+const rock = document.querySelector('#btn1');
+const paper = document.querySelector('#btn2');
+const scissors = document.querySelector('#btn3');
 
 
 
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Please type either Rock, Paper, or Scissors. Click the 'Cancel' button below or type 'cancel' to quit out of this prompt.").toLowerCase();
+function playRound() {
+
+   
+
+    /* computer randomly chooses either rock, paper, or scissors */
     computerSelection = choices[Math.floor(Math.random() * choices.length)];
-    console.log(`The computer picked ${computerSelection}. You picked ${playerSelection}.`);
+    console.log(`The computer picked ${computerSelection}. You picked ${playerSelection} .`);
 
-
+    /* Method 1: */
     if (playerSelection == "rock" && computerSelection == "scissors") {
-        console.log("Rock wins! Congratulations!")
+        console.log("Rock wins! Congratulations!");
     }
+
+
     
-    else if (playerSelection == "rock" && computerSelection == "paper") {
-        console.log("Paper wins! You lose!")
+    
+    /* Method 2: */
+    else if (document.getElementById('#btn1').clicked == true && computerSelection == "paper") {
+        console.log("Paper wins! You Lose!");
     }
 
-    else if (playerSelection == "rock" && computerSelection == "rock") {
-        console.log("Both Chose Rock! Tie Game!")
+    else if (document.getElementById('#btn1').clicked == true && computerSelection == "rock") {
+        console.log("Both Chose Rock! Tie Game!");
     }
 
-    else if (playerSelection == "paper" && computerSelection == "scissors") {
-        console.log("Scissors Beat Paper! You Lose!")
+    else if (document.getElementById('#btn2').clicked == true && computerSelection == "scissors") {
+        console.log("Scissors Beat Paper! You Lose!");
     }
 
-    else if (playerSelection == "paper" && computerSelection == "rock") {
-        console.log("Paper Beats Rock! Congratulations!")
+    else if (document.getElementById('#btn2').clicked == true && computerSelection == "rock") {
+        console.log("Paper Beats Rock! Congratulations!");
     }
 
-    else if (playerSelection == "paper" && computerSelection == "paper") {
-        console.log("Both Chose Paper! Tie Game!")
+    else if (document.getElementById('#btn2').clicked == true && computerSelection == "paper") {
+        console.log("Both Chose Paper! Tie Game!");
     }
 
-    else if (playerSelection == "scissors" && computerSelection == "rock") {
-        console.log("Rock Beats Scissors! You Lose!")
+    else if (document.getElementById('#btn3').clicked == true && computerSelection == "rock") {
+        console.log("Rock Beats Scissors! You Lose!");
     }
 
-    else if (playerSelection == "scissors" && computerSelection == "paper") {
-        console.log("Scissors Beat Paper! Congratulations!")
+    else if (document.getElementById('#btn3').clicked == true && computerSelection == "paper") {
+        console.log("Scissors Beat Paper! Congratulations!");
     }
 
-    else if (playerSelection == "scissors" && computerSelection == "scissors") {
-        console.log("Both Chose Paper! Tie Game")
+    else if (document.getElementById('#btn3').clicked == true && computerSelection == "scissors") {
+        console.log("Both Chose Paper! Tie Game");
     }
 
     else {
-        console.log("Unexpected Error")
+        console.log("Unexpected Error");
     }
+
+    console.log(playerSelection);
     
 
     
@@ -63,16 +76,28 @@ function playRound(playerSelection, computerSelection) {
    
     
 };
+function funGame() {
+    if (document.getElementById('#btn1').clicked == true) {
+        playerSelection = "rock";
+        playRound();
+    } else {
+        playerSelection = "unavailable";
+    }
+};
+
+
+
+rock.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+scissors.addEventListener("click", playRound);
 
 function game() {
-    
-    for (let i = 0; i < 5; i++) {
-        playRound()
+    playRound()
     };
-}
 
 
 
 
 
-game()
+
+/*game() */ 
